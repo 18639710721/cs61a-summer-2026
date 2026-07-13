@@ -87,7 +87,19 @@ def sum_cubes(n):
 def sum_naturals(n):
     return summation(n, identity)
 
+def product(n, term):
+    total, k = 1, 1
+    while k <= n:
+        total, k = total * term(k), k + 1
+    return total
+
+
+# 阶乘 product(f(n))
+
 
 print(sum_naturals(10))
 print(sum_cubes(3))
 print(pi_sum(1e6))
+
+
+print(product(5, identity))
